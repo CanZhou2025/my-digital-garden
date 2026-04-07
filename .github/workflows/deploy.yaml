@@ -25,11 +25,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24  # 升级到 Node 24
       - name: Install Dependencies
         run: npm install
       - name: Build Quartz
-        run: npx quartz build
+        run: npx quartz build --verbose # 开启详细日志模式，方便排查错误
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
